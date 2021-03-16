@@ -62,5 +62,11 @@ public class LibraryTest {
         library.loanBook(book);
         assertEquals(1, library.bookCount());
     }
+
+    @Test
+    public void returnBookFromCustomer(){
+        library.returnBook(book);
+        assertEquals(1, library.bookCount());
+    }
 }
 

@@ -32,4 +32,8 @@ public class Library {
     public void loanBook(Book book) {
         this.books.remove(book);
     }
+
+    public void returnBook(Book book) {
+        this.books.add(book);
+    }
 }
