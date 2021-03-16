@@ -5,13 +5,13 @@ import static org.junit.Assert.assertEquals;
 
 public class LibraryTest {
 
-    Library library;
-    Book book;
-    Book book1;
-    Book book2;
-    Book book3;
-    Book book4;
-    Book book5;
+    private Library library;
+    private Book book;
+    private Book book1;
+    private Book book2;
+    private Book book3;
+    private Customer customer;
+
 
     @Before
     public void setUp(){
@@ -20,9 +20,11 @@ public class LibraryTest {
         book1 = new Book();
         book2 = new Book();
         book3 = new Book();
-        book4 = new Book();
-        book4 = new Book();
-        book5 = new Book();
+        customer = new Customer ();
+        customer.addBook(book);
+
+
+
     }
 
     @Test
@@ -51,6 +53,14 @@ public class LibraryTest {
         library.addBook(book2);
         library.addBook(book3);
         assertEquals(4, library.bookCount());
+    }
+
+    @Test
+    public void loanBookToCustomer(){
+        library.addBook(book);
+        library.addBook(book1);
+        library.loanBook(book);
+        assertEquals(1, library.bookCount());
     }
 }
 

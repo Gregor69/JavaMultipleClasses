@@ -25,8 +25,11 @@ public class Library {
     public void cantAddBook(Book book) {
         if(this.bookCount() < this.capacity) {
             this.books.add(book);
-
         }
 
+    }
+
+    public void loanBook(Book book) {
+        this.books.remove(book);
     }
 }
